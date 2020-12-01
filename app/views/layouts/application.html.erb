@@ -15,13 +15,13 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to "PotaSupo", root_path, class: :logo %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
+              <%= link_to "New Proto", "#", class: :nav__btn %>
             </div>
           <% else %>
           <%# // ログインしているときは上記を表示するようにしましょう %>
@@ -30,6 +30,8 @@
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
+                  <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+
           <% end %>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
@@ -37,7 +39,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">Copyright © Potasupo All rights reserved.</p>
     </footer>
   </body>
 </html>
