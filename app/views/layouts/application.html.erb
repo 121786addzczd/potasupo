@@ -31,6 +31,7 @@
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
                   <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+                  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
 
           <% end %>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
