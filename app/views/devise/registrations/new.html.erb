@@ -15,28 +15,15 @@
           <%= hidden_field_tag :sns_auth, true %>
         <% else %>
           <div class="field">
-            <%= f.label :password %>
-            <% @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= f.label :password, "パスワード   (6文字以上)" %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
           </div>
 
           <div class="field">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-            </div>
+            <%= f.label :password_confirmation, "パスワード再入力" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
         <% end %>
-
-        <div class="field">
-          <%= f.label :password, "パスワード   (6文字以上)" %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
 
         <div class="field">
           <%= f.label :nickname, "ユーザー名" %><br />

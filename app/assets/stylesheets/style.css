@@ -37,8 +37,8 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: rgba(53, 174, 136, 0.75);
-  margin-bottom: 48px;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  /* margin-bottom: 48px; */
   padding: 20px 0;
 
 }
@@ -54,7 +54,13 @@ a {
 .logo {
   width: 200px;
   color: rgb(20, 20, 20);
+  font-size: 20px;
 }
+.logo:hover {
+  opacity: 0.7;
+}
+
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -267,17 +273,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-/* フッター */
 
-.footer {
-  background-color: #999;
-  padding: 10px 0;
-}
-.copyright {
-  text-align: center;
-  color: #fff;
-  font-size: 10px;
-}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
@@ -321,4 +317,137 @@ a {
   .table{
     width: 100%;
   }
+}
+
+.title {
+  font-weight:400;
+  font-size: 2.0em;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.fs-14 {
+  text-align: center;
+  margin-top:1em;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kutikomi {
+  color: rgb(71, 65, 65);
+
+}
+
+.reason-list-number {
+  font-size: 20px;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gest-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  margin-bottom:100px;
+}
+
+.gest-login-btn span{
+  color: #fff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-radius: 4px;
+  padding:10px;
+}
+
+.gest-login-btn span:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+/* ヘッダの右上ハンバーガーボタン */
+:root {
+  --hamburger-menu-size: 30px; /* メニューの大きさ */
+  --hamburger-menu-padding: 6px;
+  --hamburger-menu-border-px: 2px; /* 線の太さ */
+  --hamburger-menu-border-color: #342534; /* 線の色 */
+  --hamburger-menu-transition: 0.3s; /* アニメーション秒数 */
+}
+
+
+.hamburger-menu {
+  margin: 0 auto; /* 中央寄せしたいだけ */
+  cursor: pointer;
+  position: absolute;
+  width: 40px;
+  height: 35px;
+  background-color: #fff;
+  border: 1px #87CEFA solid;
+  border-radius: 4px;
+  background-color: inherit;
+}
+
+
+.hamburger-menu-line {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  transition: var(--hamburger-menu-transition);
+  width: calc(100% - var(--hamburger-menu-padding) * 2);
+  height: var(--hamburger-menu-border-px);
+  background-color: var(--hamburger-menu-border-color);
+}
+
+
+.line-top {
+  top: var(--hamburger-menu-padding);
+  left: var(--hamburger-menu-padding);
+}
+
+.line-middle {
+  top: calc(50% - var(--hamburger-menu-border-px)/2);
+  left: var(--hamburger-menu-padding);
+}
+
+.line-bottom {
+  bottom: var(--hamburger-menu-padding);
+  left: var(--hamburger-menu-padding);
+}
+
+
+.hamburger-menu-active > .line-top {
+  top: calc(50% - var(--hamburger-menu-border-px)/2);
+  transform: rotate(45deg);
+}
+
+.hamburger-menu-active > .line-middle {
+  width: 0;
+  height: 0;
+  left: var(--hamburger-menu-padding);
+}
+
+.hamburger-menu-active > .line-bottom {
+  top: calc(50% - var(--hamburger-menu-border-px)/2);
+  transform: rotate(-45deg);
+}
+
+.reason-lists {
+  margin-top: 20px;
+}
+
+.header_menu {
+  margin-left: 5px;
+}
+
+.header_menu:hover {
+  opacity: 0.7;
 }
