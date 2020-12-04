@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
   </head>
 
   <body>
@@ -16,28 +17,35 @@
         <div class="nav">
           <div class="nav__left">
             <%= link_to "PotaSupo", root_path, class: :logo %>
+            <div id="menu" style="display: none;">
+              <ul class='reason-lists'>
+                <li><span class="fas fa-user-edit"></span><%= link_to "ユーザー登録", new_user_registration_path, class: :header_menu %></li>
+                <li><span class="fas fa-sign-out-alt"></span><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :header_menu %></li>
+                <li><span class="fas fa-star"></span><%= link_to "みんなのレビュー", "#", class: :header_menu %></li>
+                <li><span class="fas fa-search"></span><%= link_to '検索する', user_google_oauth2_omniauth_authorize_path, method: :post, class: :header_menu %></li>
+                <li><span class="fas fa-sign-in-alt"></span><%= link_to '登録済みの方はこちら', new_user_session_path, method: :post, class: :header_menu %></li>
+              </ul>
+            </div>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "New Proto", "#", class: :nav__btn %>
+              こんにちは、
+              <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link%>
             </div>
-          <% else %>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
-            <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
-                  <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
-                  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
-
           <% end %>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
+          <div class="nav__right">
+            <ul class="hamburger-menu", id="open_menu">
+              <li class="hamburger-menu-line line-top"></li>
+              <li class="hamburger-menu-line line-middle"></li>
+              <li class="hamburger-menu-line line-bottom"></li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
+      </div>
+        <div id="page_top"><a class="fas fa-angle-up",href="#"></a>
+      </div>
     <%= yield %>
     <footer class="footer">
       <p class="copyright">Copyright © Potasupo All rights reserved.</p>
