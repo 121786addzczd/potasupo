@@ -135,8 +135,13 @@ a {
 }
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  margin: 28px 0;
 }
+.page-heading-title {
+  font-size: 35px;
+  margin: 28px 0;
+}
+
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -284,6 +289,9 @@ a {
   .page-heading {
     font-size: 24px;
   }
+  .page-heading-title {
+    font-size: 28px;
+  }
   .card {
     width: 48%;
     margin-bottom: 40px;
@@ -300,6 +308,9 @@ a {
   }
   .page-heading {
     font-size: 20px;
+  }
+  .page-heading-title {
+    font-size: 24px;
   }
   .card {
     width: 100%;
