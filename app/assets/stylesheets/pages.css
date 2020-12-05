@@ -1,0 +1,27 @@
+
+.coporation-title{
+  color: rgb(72, 71, 71);
+  font-size: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+
+}
+
+.coporation-title h3{
+  font-size: 2rem;
+}
+.terms-list {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.privacy-list {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+}
+.contact-coporation{
+  padding: 3px 0;
+}
+.question-list{
+  font-weight: bolder;
+}

@@ -58,3 +58,4 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "pry-rails"
 gem 'font-awesome-sass'
+gem 'high_voltage'
