@@ -25,3 +25,38 @@
 .question-list{
   font-weight: bolder;
 }
+/* sns ログインボタン */
+
+.sns-btn {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+
+.sns-facebook {
+  color: #fff;
+  background-color: rgb(45, 75, 225);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-radius: 4px;
+  padding:5px;
+}
+
+.sns-google {
+  color: #fff;
+  background-color:rgba(32, 178, 54, 0.778);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-radius: 4px;
+  padding:5px;
+}
+
+.sns-btn span:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}

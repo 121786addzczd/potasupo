@@ -44,36 +44,38 @@
           </div>
         </div>
       </header>
-      <%= yield %>
-      <div class="push"></div><div class="push"></div>
+      <%= yield %>>
       <div id="page_top"><a class="fas fa-angle-up",href="#"></a></div>
-      <div class='footer-contents'>
-        <div class='footer-details'>
-          <h2 class='footer-content-head'>サイト情報</h2>
-          <ul>
-            <li><%= link_to '運営会社', page_path('coporation'), class: "footer-link" %></li>
-            <li><%= link_to '利用規約', page_path('terms'), class: "footer-link" %></li>
-            <li><%= link_to 'プライバシーポリシー', page_path('privacy'), class: "footer-link" %></li>
-          </ul>
+      <div class="push"></div>
+      <footer>
+        <div class='footer-contents'>
+          <div class='footer-details'>
+            <h2 class='footer-content-head'>サイト情報</h2>
+            <ul>
+              <li><%= link_to '運営会社', page_path('coporation'), class: "footer-link" %></li>
+              <li><%= link_to '利用規約', page_path('terms'), class: "footer-link" %></li>
+              <li><%= link_to 'プライバシーポリシー', page_path('privacy'), class: "footer-link" %></li>
+            </ul>
+          </div>
+          <div class='footer-details'>
+            <h2 class='footer-content-head'>一覧を見る</h2>
+            <ul>
+              <li><%= link_to 'レビュ一覧', "#", class: "footer-link" %></li>
+              <li><%= link_to 'スポット一覧', "#", class: "footer-link" %></li>
+            </ul>
+          </div>
+          <div class='footer-details'>
+            <h2 class='footer-content-head'>ご利用ガイド</h2>
+            <ul>
+              <li><%= link_to 'よくある質問', page_path('questions'), class: "footer-link" %></li>
+              <li><%= link_to 'お問い合わせ', "#", class: "footer-link" %></li>
+              <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+            </ul>
+          </div>
         </div>
-        <div class='footer-details'>
-          <h2 class='footer-content-head'>一覧を見る</h2>
-          <ul>
-            <li><%= link_to 'レビュ一覧', "#", class: "footer-link" %></li>
-            <li><%= link_to 'スポット一覧', "#", class: "footer-link" %></li>
-          </ul>
+        <div class="second-footer">
+          <p class="copyright">Copyright © Potasupo All rights reserved.</p>
         </div>
-        <div class='footer-details'>
-          <h2 class='footer-content-head'>ご利用ガイド</h2>
-          <ul>
-            <li><%= link_to 'よくある質問', page_path('questions'), class: "footer-link" %></li>
-            <li><%= link_to 'お問い合わせ', "#", class: "footer-link" %></li>
-            <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
-          </ul>
-        </div>
-      </div>
-      <footer class="footer">
-        <p class="copyright">Copyright © Potasupo All rights reserved.</p>
       </footer>
     </div>
   </body>

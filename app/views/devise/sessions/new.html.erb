@@ -20,8 +20,17 @@
           <%= f.submit "ログイン", class: :form__btn  %>
         </div>
       <% end %>
-      <span class="fab fa-google"></span>
-      <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
+        <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+          <div class="sns-facebook">
+            <span class="fab fa-facebook"> Facebookでログイン</span>
+          </div>
+        <% end %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+          <div class="sns-google">
+            <span class="fab fa-google"> Googleでログイン</span>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
