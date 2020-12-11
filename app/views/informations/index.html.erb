@@ -1,0 +1,26 @@
+
+<div class=information-page>
+  <h1 class="information-hedding">お知らせ一覧</h1>
+  <% unless @inforamations =nil %>
+    <% @informations.each do |information| %>
+      <div class="information-lists">
+        <div class="information-list">
+          <%=link_to information.title,informations_path,class:"information-title" %><br>
+          <%= information.description%>
+          <div class="messages">
+            <%= image_tag information.image, class:'information-image' %>
+          </div>
+          <div class="information-created">
+            <%= information.created_at.strftime("%Y年%m月%d日") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="information-lists">
+      <div class="information-list">
+        <p class="information-title">お知らせはありません</p>
+      </div>
+    </div>
+  <% end %>
+<div>

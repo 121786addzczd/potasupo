@@ -16,6 +16,17 @@
   @import "font-awesome-sprockets";
   @import "font-awesome";
 
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
 
 
 .swiper-container {
