@@ -60,3 +60,6 @@ gem "omniauth-rails_csrf_protection"
 gem "pry-rails"
 gem 'font-awesome-sass'
 gem 'high_voltage'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'rails-i18n'

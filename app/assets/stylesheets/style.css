@@ -365,9 +365,9 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 20px 0;
   text-decoration: none;
-  margin-bottom:100px;
+
 }
 
 .gest-login-btn span{

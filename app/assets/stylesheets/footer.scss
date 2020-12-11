@@ -1,31 +1,38 @@
 // /* 下部広告部分 */
+.footerFixed {
+  position: relative;/*←相対位置*/
+  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+  // padding-bottom: 200px; /* ←フッターの高さを指定 */
+  box-sizing: border-box;
+   /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
+
+}
+
+footer {
+  width: 100%;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  height: 200px;
+}
 
 .footer-contents {
-  position: absolute;
   width: 100vw;
   background-color: #ebf6f7;
   padding: 5vh 0;
   bottom: 2rem;
+  display: flex;
+  justify-content: center;
 
 }
 
-.ad-footer-title {
+.footer-title {
   font-size: 4vh;
   margin-bottom: 2vh;
 }
 
-.ad-footer-explain {
+.footer-explain {
   font-size: 3vh;
   line-height: 30px;
-}
-
-// /* //下部広告部分 */
-
-
-.footer-contents {
-  display: flex;
-  justify-content: center;
-
 }
 
 .footer-details {
@@ -42,23 +49,7 @@
   opacity: 0.7;
 }
 
-
-/* フッター */
-
-
-.footerFixed {
-  position: relative;/*←相対位置*/
-  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
-  position: relative;/* ←相対位置 */
-  padding-bottom: 120px; /* ←フッターの高さを指定 */
-  box-sizing: border-box;
-   /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
-  margin-bottom: -50px;
-}
-
 .second-footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #999;
   padding: 10px 0;
@@ -69,11 +60,6 @@
   font-size: 10px;
 }
 .push {
-  height: 50px;
-}
-
-.footer {
-  width: 100%;
-  position: absolute;/*←絶対位置*/
-  bottom: 0; /*下に固定*/
+  height: 200px;
+  margin-top:20px;
 }

@@ -60,3 +60,128 @@
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-bottom: none;
 }
+
+
+/* お知らせページ */
+.information-page{
+  position: relative;
+}
+
+.information-hedding {
+  text-align: center;
+}
+
+.information-hedding-p {
+  text-align: left;
+  font-weight: bold;
+  font-size: 120%;
+  color: #434141;
+  margin-top:0;
+}
+
+.information-lists{
+  position: relative;
+  display:flex;
+  justify-content: center;
+}
+
+.information-list {
+  width: 80%;
+  border: #57C3E9; solid 1px;
+  border-left: #57C3E9 solid 10px;
+  padding: 10px 20px;
+  font-size: 90%;
+  background: rgb(251, 247, 247);
+  margin: 20px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.information-title{
+  text-decoration: none;
+  color: rgb(18, 132, 134);
+  font-weight: bold;
+  padding: 10px 0;
+}
+.information-title:hover {
+  opacity: 0.6;
+}
+
+.information-image {
+  width: 200px;
+  height: 200px;
+}
+
+.information-created {
+  text-align: right;
+}
+
+/* new/inforamation */
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.contact-text,
+.contact-textarea {
+  width: 100%;
+  margin: 5px -10px 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+#contact-text-submit{
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+  background-color: #57C3E9;
+  border-radius: 8px;
+  color: #fff;
+  padding: 15px 35%;
+  border: 0;
+  font-size: 18px;
+  margin: 0 0 5px;
+  transition: all 0.3s ease 0s;
+
+}
+
+#contact-text-submit:hover {
+  cursor: pointer;
+  opacity: 0.6；
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1875em);
+}
+
+.contents{
+  margin:2rem 6rem 2rem 6rem;
+}
+
+.contacts-title{
+  text-align: center;
+  font-size: 30px;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20%;
+  color: #fff;
+  text-decoration: none;
+  margin:5px;
+}
