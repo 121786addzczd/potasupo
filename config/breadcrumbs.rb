@@ -22,9 +22,13 @@ crumb :question do
   parent :root
 end
 
+crumb :index_contacts do
+  link "お問い合わせ一覧", contacts_path
+  parent :root
+end
 
 crumb :contact do
-  link "お問い合わせ", new_contacts_path
+  link "お問い合わせ", new_contact_path
   parent :root
 end
 
@@ -38,6 +42,12 @@ crumb :informations do
   link "お知らせ", informations_path
   parent :root
 end
+
+crumb :new_informations do
+  link "お知らせを入力", new_information_path
+  parent :informations
+end
+
 
 # crumb :projects do
 #   link "Projects", projects_path

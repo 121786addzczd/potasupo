@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :informations
 
-  resource :contacts, only: [:new, :create] do
+  resources :contacts, only: [:index, :new, :create] do
     get "/thanks" => "contacts#thanks"
   end
 end
