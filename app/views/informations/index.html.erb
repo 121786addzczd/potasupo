@@ -1,12 +1,17 @@
 <% breadcrumb :informations %>
+<% if user_signed_in? %>
+  <% if current_user == @user || current_user.admin? %>
+    <p><%=link_to "お知らせを作成",new_information_path%></P>
+  <% end %>
+<% end %>
 <div class=information-page>
   <h1 class="information-hedding">お知らせ一覧</h1>
   <% unless @inforamations =nil %>
     <% @informations.each do |information| %>
       <div class="information-lists">
         <div class="information-list">
-          <%=link_to information.title,informations_path,class:"information-title" %><br>
-          <%= information.description%>
+          <%=link_to information.title, informations_path, class:"information-title" %><br>
+          <%= information.description %>
           <div class="messages">
             <%= image_tag information.image, class:'information-image' %>
           </div>

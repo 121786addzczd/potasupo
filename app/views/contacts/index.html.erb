@@ -1,0 +1,24 @@
+<% breadcrumb :index_contacts %>
+<div class=information-page>
+  <h1 class="information-hedding">お問い合わせ一覧</h1>
+  <% if @contacts != nil %>
+    <% @contacts.each do |contact| %>
+      <div class="information-lists">
+        <div class="information-list">名前:
+          <%=link_to contact.name, contacts_path, class:"information-title" %><br>Email:
+          <%= contact.email %><br>内容:
+          <%= contact.content %>
+          <div class="information-created">
+            <%= contact.created_at.strftime("%Y年%m月%d日") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="information-lists">
+      <div class="information-list">
+        <p class="information-title">お問い合わせはありません</p>
+      </div>
+    </div>
+  <% end %>
+<div>

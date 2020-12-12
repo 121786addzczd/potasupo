@@ -1,6 +1,10 @@
 class InformationsController < ApplicationController
+  before_action :move_to_index,except: :index
+  before_action :admin_user, only: [:new]
+  before_action :set_information, only: [:show, :edit, :update]
+
   def index
-    @informations = Information.all
+    @informations = Information.all.order('created_at DESC')
   end
 
   def new
@@ -36,6 +40,14 @@ class InformationsController < ApplicationController
   private
   def information_params
     params.require(:information).permit(:title, :description, :image)
+  end
+
+  def move_to_index
+    redirect_to informations_path unless user_signed_in?
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
   end
 
   def set_information
