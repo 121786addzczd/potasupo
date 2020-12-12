@@ -185,3 +185,12 @@
   text-decoration: none;
   margin:5px;
 }
+
+.return_btn {
+  margin-top:10px;
+}
+
+.return_btn:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+}

@@ -1,0 +1,19 @@
+<div class="contents">
+  <div class="container" >
+    <h3 class="contacts-title">お問い合わせ</h3>
+    <%= form_with(model: @contact, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+      <%= f.label :name, "名前" %>
+      <span class="indispensable">必須</span>
+      <%= f.text_field :name, class:"contact-text", placeholder:"やまだ たろう" %><br>
+      <%= f.label :email, "メールアドレス" %>
+      <span class="indispensable">必須</span>
+      <%= f.email_field :email, class:"contact-text", placeholder:"example@xxxx.com"%><br>
+      <%= f.label :content, "内容" %>
+      <span class="indispensable">必須</span>
+      <%= f.text_area :content,class:"contact-textarea",:size=>"50x10" ,maxlength:"1000"%>
+      <%= f.submit "送信",class:"contact-text", id:"contact-text-submit", data: { confirm: "この内容で送信してもよろしいですか？" } %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <% end %>
+  </div>
+</div>
