@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
 
   resources :informations
+
+  resource :contacts, only: [:new, :create] do
+    get "/thanks" => "contacts#thanks"
+  end
 end
