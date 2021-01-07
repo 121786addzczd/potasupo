@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'homes/index'
+  # get 'homes/index'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root to: 'homes#index'
+  resources :tweets
   resources :reviews
 
   resources :users, only: [:show, :edit, :update]

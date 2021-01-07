@@ -22,8 +22,20 @@
         <%= "#{@user.nickname}さんのレビュー"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%# <%= render partial: "reviwes/review", collection: @user.reviwes.order('created_at DESC') %>
+        <% @user.tweets.order('created_at DESC').each do |tweet| %>
+          <div class="card">
+            <%= link_to image_tag(tweet.image, class: :card__img ), tweet_path(tweet) %>
+            <div class="card__body">
+              <%= link_to tweet.title, tweet_path(tweet), class: :card__title %>
+              <p class="card__summary">
+                <%= tweet.text %>
+              </p>
+              <div class="card__user">
+                <%= tweet.created_at.strftime("%Y年%m月%d日投稿 ") %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

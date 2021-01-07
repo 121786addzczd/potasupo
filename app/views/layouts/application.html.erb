@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProtoSpace</title>
+    <title>ポタログ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,7 +22,7 @@
                 <ul class='reason-lists'>
                   <li><span class="fas fa-user-edit"></span><%= link_to "ユーザー登録", new_user_registration_path, class: :header_menu %></li>
                   <li><span class="fas fa-sign-out-alt"></span><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :header_menu %></li>
-                  <li><span class="fas fa-star"></span><%= link_to "みんなのレビュー", "#", class: :header_menu %></li>
+                  <li><span class="fas fa-star"></span><%= link_to "みんなのレビュー", tweets_path, class: :header_menu %></li>
                   <li><span class="fas fa-search"></span><%= link_to '検索する', user_google_oauth2_omniauth_authorize_path, method: :post, class: :header_menu %></li>
                   <li><span class="fas fa-sign-in-alt"></span><%= link_to '登録済みの方はこちら', new_user_session_path, method: :post, class: :header_menu %></li>
                 </ul>
