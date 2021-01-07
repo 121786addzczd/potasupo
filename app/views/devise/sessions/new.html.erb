@@ -20,12 +20,22 @@
       <% end %>
         <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
           <div class="sns-facebook">
-            <span class="fab fa-facebook"> Facebookでログイン</span>
+            <span class="fab fa-facebook-f"> Facebookでログイン</span>
           </div>
         <% end %>
         <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
           <div class="sns-google">
             <span class="fab fa-google"> Googleでログイン</span>
+          </div>
+        <% end %>
+        <%= link_to user_twitter_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
+          <div class="sns-twitter">
+            <span class="fab fa-twitter"> twitterでログイン</span>
+          </div>
+        <% end %>
+        <%= link_to users_guest_sign_in_path, method: :post, class: "sns-btn" do %>
+          <div class="gest-login">
+            <span class="fa fa-power-off"> ゲストユーザーとしてお試しログイン</span>
           </div>
         <% end %>
         <p>admin@example.com</p>

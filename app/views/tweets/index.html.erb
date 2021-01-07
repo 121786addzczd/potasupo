@@ -1,0 +1,29 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link%>
+        <a><%= link_to "つぶやく", new_tweet_path, class: :greeting__link%></a>
+      </div>
+    <% end %>
+    <h2 class="tweets-index-title">気軽につぶやいてみましょう！</h2>
+    <div class="card__wrapper">
+      <% @tweets.each do |tweet|%>
+        <div class="card">
+          <%= link_to image_tag(tweet.image, class: :card__img ), tweet_path(tweet) %>
+          <div class="card__body">
+            <%= link_to tweet.title, tweet_path(tweet), class: :card__title %>
+            <p class="card__summary">
+              <%= tweet.text %>
+            </p>
+            <div class="card__user">
+              <%= tweet.created_at.strftime("%Y年%m月%d日投稿 ") %>
+              <%= link_to "by #{tweet.user.nickname}", user_path(tweet.user),class: :"card__user__name" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

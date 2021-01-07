@@ -127,6 +127,10 @@ a {
 
 /* メイン */
 
+main {
+  margin-top:30px;
+}
+
 .greeting{
   margin-bottom: 20px;
 }
@@ -168,10 +172,20 @@ a {
 .card__user {
   display: block;
   font-size: 12px;
+}
+
+.card__user__name {
+  font-size: 12px;
+  display: block;
   color: #999;
   text-align: right;
   text-decoration: underline;
 }
+
+.tweets-index-title{
+  padding:15px 0;
+}
+
 
 /* 詳細ページ */
 .prototype__wrapper{
