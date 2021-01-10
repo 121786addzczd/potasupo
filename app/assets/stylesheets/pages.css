@@ -166,7 +166,7 @@
 
 #contact-text-submit:hover {
   cursor: pointer;
-  opacity: 0.6；
+  opacity: 0.6;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-0.1875em);
 }
