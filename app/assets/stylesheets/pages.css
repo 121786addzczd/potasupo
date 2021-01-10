@@ -103,7 +103,7 @@
 
 .information-list {
   width: 80%;
-  border: #57C3E9; solid 1px;
+  border: 1px #57C3E9; solid;
   border-left: #57C3E9 solid 10px;
   padding: 10px 20px;
   font-size: 90%;
