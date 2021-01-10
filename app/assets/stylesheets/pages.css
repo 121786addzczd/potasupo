@@ -48,7 +48,7 @@
 
 .sns-google {
   color: #fff;
-  background-color: #239b76;
+  background-color: #5cc492;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   border-radius: 4px;
   padding:5px;
@@ -103,7 +103,7 @@
 
 .information-list {
   width: 80%;
-  border: 1px #57C3E9; solid;
+  border: #57C3E9 solid 1px;
   border-left: #57C3E9 solid 10px;
   padding: 10px 20px;
   font-size: 90%;
