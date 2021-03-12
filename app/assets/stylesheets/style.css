@@ -412,10 +412,9 @@ main {
 .hamburger-menu {
   margin: 0 auto; /* 中央寄せしたいだけ */
   cursor: pointer;
-  position: absolute;
+  position: relative;
   width: 40px;
   height: 35px;
-  background-color: #fff;
   border: 1px #87CEFA solid;
   border-radius: 4px;
   background-color: inherit;
@@ -423,8 +422,6 @@ main {
 
 
 .hamburger-menu-line {
-  display: flex;
-  justify-content: space-between;
   position: absolute;
   transition: var(--hamburger-menu-transition);
   width: calc(100% - var(--hamburger-menu-padding) * 2);
