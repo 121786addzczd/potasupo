@@ -1,19 +1,21 @@
 <% breadcrumb :new_informations %>
-<div class="contents">
-  <div class="container" >
-    <h2 class="contacts-title">お知らせを入力</h2>
-    <%= form_with model: @information, url:informations_path, local: true do |f| %>
-    <%= render 'layouts/error_messages', model: f.object %>
-    <%= f.file_field :image, id: 'shop_image',class:"shop-preview" %><br>
-    <div id="shop-image-list"></div><br>
-      タイトル
-      <span class="indispensable">必須</span>
-      <%= f.text_field :title, class:"contact-text", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %><br>
-        詳細内容
-      <span class="indispensable">必須</span>
-      <%= f.text_area :description, class:"contact-textarea", placeholder:"お知らせを記述してください。" ,rows:"7" ,maxlength:"1000" %>
-      <%= f.submit "お知らせを投稿する" ,class:"contact-text", id:"contact-text-submit" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    <% end %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">お知らせを入力</h2>
+      <%= form_with model: @information, url:informations_path, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <%= f.file_field :image, id: 'shop_image',class:"shop-preview" %><br>
+      <div id="shop-image-list"></div><br>
+        タイトル
+        <span class="indispensable">必須</span>
+        <%= f.text_field :title, class:"contact-text", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %><br>
+          詳細内容
+        <span class="indispensable">必須</span>
+        <%= f.text_area :description, class:"contact-textarea", placeholder:"お知らせを記述してください。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.submit "お知らせを投稿する" ,class:"contact-text", id:"contact-text-submit" %>
+        <p><%=link_to '戻る', root_path, class: :back__form__btn %></p>
+      <% end %>
+    </div>
   </div>
 </div>
