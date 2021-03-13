@@ -1,5 +1,15 @@
 crumb :root do
-  link "Home", root_path
+  link "トップページ", root_path
+end
+
+crumb :user_sign_in do
+  link "ログイン", user_session_path
+  parent :root
+end
+
+crumb :user_registration do
+  link "新規登録", user_registration_path
+  parent :root
 end
 
 crumb :coporation do
