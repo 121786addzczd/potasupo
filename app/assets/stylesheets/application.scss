@@ -16,9 +16,16 @@
   @import "font-awesome-sprockets";
   @import "font-awesome";
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* パンくず */
 .breadcrumbs a{
   color:rgb(38, 38, 38);
+  margin-left: 10px;
 }
 
 .breadcrumbs a:hover {
