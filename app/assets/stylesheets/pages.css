@@ -144,7 +144,6 @@
 .contact-text,
 .contact-textarea {
   width: 100%;
-  margin: 5px -10px 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
@@ -156,12 +155,10 @@
   background-color: #57C3E9;
   border-radius: 8px;
   color: #fff;
-  padding: 15px 35%;
   border: 0;
   font-size: 18px;
-  margin: 0 0 5px;
+  margin: 5px 0;
   transition: all 0.3s ease 0s;
-
 }
 
 #contact-text-submit:hover {
