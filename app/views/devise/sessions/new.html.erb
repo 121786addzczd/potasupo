@@ -3,21 +3,26 @@
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザーログイン</h2>
         <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+          <%= render 'layouts/error_messages', model: f.object %>
+          <div class="field">
+            <%= f.label :email, "メールアドレス" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+          <div class="field">
+            <%= f.label :password, "パスワード（6文字以上）" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", id:"js_password" %>
+            <p class="password_display"><input type="checkbox" id="js_passwordCheck"><a id="js_passwordDisplayText">パスワードを表示する</a><p>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "ログイン", class: :form__btn  %>
-        </div>
-      <% end %>
+          <div class="actions">
+            <%= f.submit "ログイン", class: :form__btn  %>
+          </div>
+          <p class="login-link">
+            アカウントをお持ちでないですか？
+            <%= link_to "登録する", new_user_registration_path %>
+          </p>
+        <% end %>
         <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "sns-btn" do %>
           <div class="sns-facebook">
             <span class="fab fa-facebook-f"> Facebookでログイン</span>
