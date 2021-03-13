@@ -1,0 +1,9 @@
+<% if notice %>
+  <div class="alert alert-info", id="js-flashMessage">
+    <%= notice %>
+  </div>
+<% elsif alert %>
+  <div class="alert alert-danger", id="js-flashMessage">
+    <%= alert %>
+  </div>
+<% end %>
