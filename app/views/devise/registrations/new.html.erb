@@ -13,9 +13,10 @@
           <%= hidden_field_tag :sns_auth, true %>
         <% else %>
           <div class="field">
-            <%= f.label :password, "パスワード   (6文字以上)" %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
+          <%= f.label :password, "パスワード   (6文字以上)" %><br />
+          <%= f.password_field :password, autocomplete: "off", id:"js_password" %>
+          <p class="password_display"><input type="checkbox" id="js_passwordCheck"><a id="js_passwordDisplayText">パスワードを表示する</a><p>
+        </div>
 
           <div class="field">
             <%= f.label :password_confirmation, "パスワード再入力" %><br />
@@ -36,6 +37,10 @@
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
+        <p class="login-link">
+          アカウントをお持ちですか？
+          <%= link_to "サインインする", new_user_session_path %>
+        </p>
       <% end %>
     </div>
   </div>
