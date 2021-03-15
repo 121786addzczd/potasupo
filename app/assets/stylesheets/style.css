@@ -337,6 +337,10 @@ main {
   .prototype_image{
     width: 60%;
   }
+  .show-images{
+    width: 100%;
+    height: 400px;
+  }
 }
 
  /* スマホ表示 */
@@ -366,6 +370,47 @@ main {
   .table{
     width: 100%;
   }
+  .spot-column {
+    width: 10%;
+    background-color: #eee;
+    border: 1px solid #dedede;
+    font-size: 14px;
+    text-align: center;
+  }
+  .detail-value {
+    padding: 10px;
+    border: 1px solid #dedede;
+    font-size: 14px;
+  }
+  .show-images{
+    width: 100%;
+    height: 300px;
+  }
+  .iframe-map {
+    position: relative;
+    width: 100%;
+  }
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+  .spot-edit-btn {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 6px 0px;
+    padding: 1vh 3vw;
+  }
+  .spot-destroy {
+    font-size: 14px;
+    margin: 6px 6px;
+    padding: 1vh 3vw;
+  }
+  .links{
+    display: flex;
+    justify-content: center;
+    font-size: 12px
+  }
 }
 
 .title {
@@ -375,7 +420,7 @@ main {
   text-align: center;
 }
 
-.fs-14 {
+.app-description {
   text-align: center;
   margin-top:1em;
 }
@@ -384,10 +429,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.kutikomi {
-  color: rgb(71, 65, 65);
-
 }
 
 .reason-list-number {
