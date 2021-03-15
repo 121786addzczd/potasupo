@@ -1,5 +1,6 @@
 class Spot < ApplicationRecord
   has_many_attached :images, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15 }, uniqueness: true
   validates :address, presence: true
