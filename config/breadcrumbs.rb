@@ -7,6 +7,27 @@ crumb :user_sign_in do
   parent :root
 end
 
+crumb :spots do
+  link "スポット一覧", spots_path
+  parent :root
+end
+
+crumb :new_spots do
+  link "新しいスポット登録", new_spot_path
+  parent :root
+end
+
+crumb :edit_spots do
+  link "スポット編集", edit_spot_path
+  parent :show_spot
+end
+
+crumb :show_spot do |spot|
+  spot = Spot.find(params[:id])
+  link "#{spot.name}", spot_path(spot)
+  parent :spots
+end
+
 crumb :user_registration do
   link "新規登録", user_registration_path
   parent :root
