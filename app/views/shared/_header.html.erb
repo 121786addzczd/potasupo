@@ -9,7 +9,8 @@
             <li><span class="fas fa-sign-out-alt"></span><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :header_menu %></li>
             <li><span class="fas fa-star"></span><%= link_to "みんなのレビュー", tweets_path, class: :header_menu %></li>
             <li><span class="fas fa-search"></span><%= link_to '検索する', user_google_oauth2_omniauth_authorize_path, method: :post, class: :header_menu %></li>
-            <li><span class="fas fa-sign-in-alt"></span><%= link_to '登録済みの方はこちら', new_user_session_path, method: :post, class: :header_menu %></li>
+            <li><span class="fas fa-sign-in-alt"></span><%= link_to '登録済みの方はこちら', new_user_session_path, class: :header_menu %></li>
+            <li><span class="fas fa-map-marked-alt"></span><%= link_to 'スポット一覧', spots_path, class: :header_menu %></li>
           </ul>
         </div>
       </div>
