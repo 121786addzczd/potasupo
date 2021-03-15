@@ -70,7 +70,7 @@
 /* スィパースライド */
 .swiper-container {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   padding-top: 75%; /* = height ÷ width × 100 */
 }
 
@@ -124,3 +124,51 @@
   text-decoration: none;
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .swiper-container {
+    width: 100%;
+    height: 80vh;
+    padding-top: 75%; /* = height ÷ width × 100 */
+  }
+
+  .swiper-slide p.swiper-caption {
+  font-size:5vw;
+  }
+
+  // topページにスクロールするボタン
+  #page_top {
+    bottom: 2.5rem;
+    right: 15px;
+  }
+  #page_top a {
+    height: 45px;
+    width: 45px;
+    font-size: 1.8em;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .swiper-container {
+    width: 100%;
+    height: 50vh;
+    padding-top: 75%; /* = height ÷ width × 100 */
+  }
+
+  .swiper-slide p.swiper-caption {
+    font-size: 4vw;
+    line-height:120%;
+  }
+
+  // topページにスクロールするボタン
+  #page_top {
+    bottom: 2rem;
+    right: 12px;
+  }
+  #page_top a {
+    height: 40px;
+    width: 40px;
+    font-size: 1.6em;
+  }
+}

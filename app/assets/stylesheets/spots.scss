@@ -4,7 +4,7 @@
 }
 
 .spot-column {
-  width: 30%;
+  width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
   font-size: 14px;
@@ -51,20 +51,7 @@
   justify-content: center;
 }
 
-.iframe-map {
-  position: relative;
-  width: 100%;
-}
-
-#map {
+#spot-map {
   height: 500px;
   width: 100%;
-}
-
-
-
-
-.spot_image {
-  width: 100px;
-  height: 100px;
 }

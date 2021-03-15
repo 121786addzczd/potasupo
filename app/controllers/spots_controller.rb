@@ -17,7 +17,7 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      redirect_to spot_path(@spot),notice: "投稿が完了しました"
+      redirect_to spot_path(@spot), notice: "投稿が完了しました"
     else
       flash.now[:alert] = '※入力項目に不備があります。確認してください※'
       render :new
@@ -34,8 +34,9 @@ class SpotsController < ApplicationController
 
   def update
     if @spot.update(spot_params)
-      redirect_to spot_path(@spot)
+      redirect_to spot_path(@spot), notice: "が完了しました"
     else
+      flash.now[:alert] = '※入力項目に不備があります。確認してください※'
       render :edit
     end
   end
@@ -43,7 +44,7 @@ class SpotsController < ApplicationController
   def destroy
     spot = Spot.find(params[:id])
     spot.destroy
-    redirect_to root_path
+    redirect_to spots_path, notice: "削除が完了しました"
   end
 
   private

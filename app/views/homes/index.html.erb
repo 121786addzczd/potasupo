@@ -1,50 +1,42 @@
 <% breadcrumb :root %>
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="/images/image1.jpg" alt style="width: 100%; height: 100%;"><p class="swiper-caption"><nobr>自分だけの景色を</nobr>見つけに行こう</P></div>
-    <div class="swiper-slide"><img src="/images/image2.jpg" alt style="width: 100%; height: 100%;"><p class="swiper-caption"><nobr>自分だけの景色を</nobr>見つけに行こう</P></div>
-    <div class="swiper-slide"><img src="/images/image4.jpg" alt style="width: 100%; height: 100%;"><p class="swiper-caption"><nobr>自分だけの景色を</nobr>見つけに行こう</P></div>
+<%= render "swiper" %>
+<main class="main">
+  <div class="inner">
+    <div class='select-reason-contents'>
+      <h2 class='title'>
+        ポタリングとは ?
+      </h2>
+      <p class="app-description">目的地を特に定めることなく気分や体調に合わせて周辺を自転車でめぐること</p>
+      <div class="card__wrapper">
+        <div class="description-card">
+          <span class="far fa-comments fa-4x description-list"></span>
+          <p class='reason-list-number'>リアルな口コミ</p>
+          <p class="app-description">ユーザーたちの手によって利便性の高いサイトを作り上げていく事を基本方針としているため、業者などの存在は無し。よりリアルな口コミが集まります。</p>
+        </div>
+        <div class="description-card">
+          <span class="fas fa-user-cog fa-4x description-list"></span>
+          <p class='reason-list-number'>シンプルな機能</p>
+          <p class="app-description">使いやすさを重視してシンプルなレイアウト。直感的な操作で詳しい説明書いらずの操作ができます。</p>
+        </div>
+        <div class="description-card">
+          <span class="fas fa-bicycle fa-4x description-list"></span>
+          <p class='reason-list-number'>前に進む</p>
+          <p class="app-description">前に進むのは自転車だけではありません。ユーザーはもちろん、運営陣も前に進む向上心を持っています。より良いサービス提供を目指して。</p>
+        </div>
+
+      </div>
+      <%= link_to users_guest_sign_in_path, method: :post, class: "gest-login-btn" do %>
+        <span class="fas fa-power-off"> ゲストユーザーとしてお試しログイン</span>
+      <% end %>
+    </div>
+    <h2 class="tweets-index-title">スポット一覧</h2>
+    <div class="card__wrapper">
+      <%= render partial: "spots/spot", collection: @spots %>
+    </div>
   </div>
-  <div class="swiper-pagination"></div>
-</div>
+</main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
-  <script>
-    var mySwiper = new Swiper ('.swiper-container', {
-      loop: true,         //画像のループ
-      effect: 'fade',    //切り替わるときのアニメーション
-      speed: 4000,        //画像の切替スピード
-      autoplay: {         //自動で動かす
-        delay: 4000,
-        disableOnInteraction: false
-      },
-    });
-  </script>
-<div class='select-reason-contents'>
-  <h2 class='title'>
-    ポタリングとは ?
-  </h2>
-    <p class="app-description">目的地を特に定めることなく気分や体調に合わせて周辺を自転車でめぐること</p>
-    <div class =row>
-      <span class="far fa-comments fa-4x kutikomi"></span>
-    </div>
-    <span class='reason-list-number'>リアルな口コミ</span>
-    <p class="app-description">ユーザーたちの手によって利便性の高いサイトを作り上げていく事を基本方針と<br>しているため、業者などの存在は無し。よりリアルな口コミが集まります。</p>
-    <div class =row>
-      <span class="fas fa-user-cog fa-4x kutikomi"></span>
-    </div>
-    <span class='reason-list-number'>シンプルな機能</span>
-    <p class="app-description">使いやすさを重視してシンプルなレイアウト。<br>直感的な操作で詳しい説明書いらずの操作ができます。</p>
-    <div class =row>
-      <span class="fas fa-bicycle fa-4x kutikomi"></span>
-    </div>
-    <span class='reason-list-number'>前に進む</span>
-    <p class="app-description">前に進むのは自転車だけではありません。<br>ユーザーはもちろん、運営陣も前に進む向上心を持っています。<br>より良いサービス提供を目指して。</p>
 
-    <%= link_to users_guest_sign_in_path, method: :post, class: "gest-login-btn" do %>
-      <span class="fas fa-power-off"> ゲストユーザーとしてお試しログイン</span>
-    <% end %>
-</div>
   <div class=information-page>
     <div class="information-lists">
       <div class="information-list">
