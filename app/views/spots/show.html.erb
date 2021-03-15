@@ -1,0 +1,94 @@
+<% breadcrumb :show_spot %>
+<main class="main">
+  <div class="inner">
+    <div class="spot-show">
+      <div class="spot-box">
+        <table class="detail-table">
+          <tbody>
+            <tr>
+              <th class="spot-column">スポットの名前</th>
+              <td class="detail-value"><%= @spot.name %></td>
+            </tr>
+            <tr>
+              <th class="spot-column">住所</th>
+              <td class="detail-value"><%= @spot.address %></td>
+            </tr>
+            <tr>
+              <th class="spot-column">スポット写真</th>
+              <td class="detail-value">
+                <div class="show-image">
+                  <% @spot.images.each do |image| %>
+                    <%= image_tag image, class:"show-images" %>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="spot-column">Google Map</th>
+              <td class="detail-value">
+                <div class="iframe-map">
+                  <div id='map'></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% if user_signed_in? %>
+        <div class="spot-edit-links">
+          <%= link_to 'スポットの編集', edit_spot_path(@spot.id), class: "spot-edit-btn" %>
+          <%= link_to '削除', spot_path(@spot.id), method: :delete, class:'spot-destroy', data: { confirm: "本当に削除しますか？" } %>
+        </div>
+      <% end %>
+      </div>
+      <div class="links">
+        <% if @spot.previous.present? %>
+          <%= link_to spot_path(@spot.previous), class: "change-item-btn" do %>
+            <span class="fas fa-angle-double-left"></span>
+              <span>前のページ</span>
+          <% end %>
+        <% end %>
+        <% if @spot.next.present? %>
+          <%= link_to spot_path(@spot.next), class: "change-item-btn" do %>
+            <span>後ろのページ</span>
+              <p class="fas fa-angle-double-right"></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <p><%=link_to "新しいスポットを追加",new_spot_path %></P>
+  </div>
+</main>
+
+
+  <script type="text/javascript">
+    function initMap() {
+  // #latitude,longitudeから位置を特定
+      var test ={lat: <%= @spot.latitude %>, lng: <%= @spot.longitude %>};
+      var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: test
+                });
+      var transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+
+      var contentString = '住所：<%= @spot.address %>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+  //  Map上の指定した位置にピンを挿して表示する
+      var marker = new google.maps.Marker({
+                    position:test,
+                    map: map,
+                    title: contentString
+                  });
+
+        marker.addListener('click', function() {
+        infowindow.open(map, marker);
+        });
+    }
+  </script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=ENV['GOOGLE_MAP_API_KEY']%>&callback=initMap">
+</script>

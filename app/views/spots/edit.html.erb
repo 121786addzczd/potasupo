@@ -1,0 +1,18 @@
+<% breadcrumb :edit_spots %>
+<div class="contents">
+  <div class="container" >
+    <h3 class="contacts-title">スポット登録</h3>
+    <%= form_with model: @spot, id: 'new_message', local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <%= f.file_field :images, name: 'spot[images][]', id: 'spot-image',class:"image-preview" %><br>
+      <div id="spot-image-list"></div>
+      <%= f.label :name, "お店の名前" %>
+      <span class="indispensable">必須</span>
+      <%= f.text_field :name, class:"contact-text", placeholder:"(例)金華山" %>
+      <%= f.label :address, "住所" %>
+      <span class="indispensable">必須</span>
+      <%= f.text_field :address, class:"contact-text", placeholder:"(例)岐阜県岐阜市槻谷" %>
+      <%= f.submit "送信",class:"contact-text", id:"contact-text-submit" %>
+    <% end %>
+  </div>
+</div>

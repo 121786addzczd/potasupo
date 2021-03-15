@@ -1,0 +1,10 @@
+<% breadcrumb :spots %>
+<main class="main">
+  <div class="inner">
+    <h2 class="tweets-index-title">スポット一覧</h2>
+    <div class="card__wrapper">
+      <%= render partial: "spot", collection: @spots %>
+    </div>
+  </div>
+</main>
+
