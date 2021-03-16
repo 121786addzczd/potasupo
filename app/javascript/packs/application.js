@@ -15,6 +15,7 @@ require('./passwordDisplay')
 require('./flashMessageAutoClose')
 require('./imagePreview')
 require('./imagePreview')
+require("./review")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

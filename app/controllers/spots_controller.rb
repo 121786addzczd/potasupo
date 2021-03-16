@@ -27,6 +27,7 @@ class SpotsController < ApplicationController
 
 
   def show
+    @review = Review.new
   end
 
   def edit
