@@ -1,4 +1,4 @@
-<% breadcrumb :show_spot %>
+<%  breadcrumb :show_spot unless request.path.include?("reviews") %>
 <main class="main">
   <div class="inner">
     <div class="spot-show">

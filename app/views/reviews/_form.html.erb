@@ -2,6 +2,7 @@
 
 <div class="rating-box">
   <%= form_with model: review, url: spot_reviews_path(spot), local: true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
     <div class="main-rating">
       <div class="ratings">
         <span class="fa fa-star-o" id="star"></span>

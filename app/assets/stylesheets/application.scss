@@ -55,6 +55,12 @@
 }
 
 /* バリデーションのエラーメッセージ */
+.error-count-message {
+  text-align: center;
+  color: rgb(214, 75, 29);
+  box-shadow: #997f7f;
+}
+
 .error-alert {
   display: flex;
   justify-content: center;
