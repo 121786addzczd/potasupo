@@ -33,22 +33,21 @@
     <div class="card__wrapper">
       <%= render partial: "spots/spot", collection: @spots %>
     </div>
+    <div class=information-page>
+      <div class="information-lists">
+        <div class="information-list">
+          <p class="information-hedding-p">お知らせ</p>
+          <% unless @inforamations =nil %>
+            <% @informations.each do |information| %>
+              <%= information.created_at.strftime("%Y年%m月%d日") %>
+              <%=link_to information.title,informations_path,class:"information-title" %><br>
+            <% end %>
+          <% else %>
+            <p class="information-title">お知らせはありません</p>
+          <% end %>
+        </div>
+      </div>
+    <div>
   </div>
 </main>
 
-
-  <div class=information-page>
-    <div class="information-lists">
-      <div class="information-list">
-        <p class="information-hedding-p">お知らせ</p>
-        <% unless @inforamations =nil %>
-          <% @informations.each do |information| %>
-            <%= information.created_at.strftime("%Y年%m月%d日") %>
-            <%=link_to information.title,informations_path,class:"information-title" %><br>
-          <% end %>
-        <% else %>
-          <p class="information-title">お知らせはありません</p>
-        <% end %>
-      </div>
-    </div>
-  <div>

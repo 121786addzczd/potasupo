@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def index
+    @spot = Spot.find(params[:spot_id])
+    @reviews = @spot.reviews
   end
 
   def create

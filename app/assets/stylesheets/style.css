@@ -393,6 +393,14 @@ main {
     height: 300px;
     width: 100%;
   }
+  .star-rating {
+    font-size: 18px;
+  }
+  .average-score-display {
+    font-size: 14px;
+    line-height: 2;
+    margin-left: 0.8em;
+  }
   .spot-edit-btn {
     font-size: 14px;
     font-weight: bold;
