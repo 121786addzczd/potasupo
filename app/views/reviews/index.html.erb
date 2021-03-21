@@ -1,16 +1,39 @@
-<main class="main">
+<div class="main">
   <div class="inner">
-    <% if user_signed_in? %>
-    <%# ログインしているときは以下を表示する %>
-      <div class="greeting">
-        こんにちは、
-        <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link%>
+    <h2 class="tweets-index-title">レビュー一覧</h2>
+    <p class="review-header-title"><%= link_to @spot.name, spot_path(@spot) %></p>
+    <div class="average-score">
+      <div class="star-rating">
+        <div class="star-rating-front" style="width: <%= @spot.review_score_percentage %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+      <div class="average-score-display">
+        <%= @spot.avg_score %>点（<%= @spot.reviews.count %>件のレビュー）
+      </div>
+    </div>
+    <% @reviews.each do |review| %>
+      <div class="balloon5">
+        <div class="faceicon">
+          <%= image_tag review.user.image if review.user.image.attached? %>
+          <%= image_tag "/images/profile_default_img.jpg" unless review.user.image.attached? %>
+        </div>
+        <div class="chatting">
+          <div class="says">
+            <p><%= simple_format review.content %></p>
+            <div class="average-score">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= review.score.round(1).to_i * 100 / 5 %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display">
+                <%= review.score %>点
+              </div>
+            </div>
+            <p class="review-user-name">投稿者 <%= link_to review.user.nickname, user_path(review.user)%> <%= review.created_at.strftime("%Y.%m.%d") %></p>
+          </div>
+        </div>
       </div>
     <% end %>
-    <%# // ログインしているときは上記を表示する %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-      <%= render partial: "review", collection: @reviews %>
-    </div>
   </div>
 </main>
+

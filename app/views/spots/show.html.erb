@@ -31,6 +31,20 @@
                 </div>
               </td>
             </tr>
+            <tr>
+              <th class="spot-column">レビュー</th>
+              <td class="detail-value">
+                <div class="average-score">
+                  <div class="star-rating">
+                    <div class="star-rating-front" style="width: <%= @spot.review_score_percentage %>%">★★★★★</div>
+                    <div class="star-rating-back">★★★★★</div>
+                  </div>
+                  <div class="average-score-display">
+                    <%= @spot.avg_score %>点(<%= @spot.reviews.count %>件のレビュー)
+                  </div>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       <% if user_signed_in? %>
